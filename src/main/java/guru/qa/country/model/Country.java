@@ -18,4 +18,11 @@ public record Country(@JsonProperty("country_name")
         new Date()
     );
   }
+
+  public static CountryEntity fromJson(Country country) {
+    CountryEntity countryEntity = new CountryEntity();
+    countryEntity.setCountryCode(country.countryCode);
+    countryEntity.setCountryName(country.countryName);
+    return countryEntity;
+  }
 }
